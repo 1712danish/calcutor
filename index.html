@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calculator</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer>
+    </script>
+</head>
+<body>
+    <div class="calculator-grid">
+    <div class="output">  
+    <!-- <div data-previous-operand class="previous_operand"></div> -->
+    <div id="screen" class="current-operand"></div>
+    
+    </div>
+    <button   class="span-two"  onclick="clr(this)" >AC</button>
+    <button onclick="del(this)">DEL</button>
+    <button onclick="get(this)" id="b3">%</button>
+    <button onclick="get(this)" id="b1">1</button>
+    <button onclick="get(this)" id="b2">2</button>
+    <button onclick="get(this)" id="b3">3</button>
+    <button onclick="get(this)" id="b4">*</button>
+    <button onclick="get(this)" id="b5">4</button>
+    <button onclick="get(this)" id="b6">5</button>
+    <button onclick="get(this)" id="b7">6</button>
+    <button onclick="get(this)" id="b8">+</button>
+    <button onclick="get(this)" id="b9">7</button>
+    <button onclick="get(this)" id="b10">8</button>
+    <button onclick="get(this)" id="b12">9</button>
+    <button onclick="get(this)" id="b11">-</button>
+    
+
+    <button onclick="get(this)" id="b13">.</button>
+    <button onclick="get(this)" id="b14">0</button>
+    <button class="span-two" onclick="calculate(this)" >=</button>
+    
+    
+
+
+
+    </div>
+
+    <script>
+        // var equation;
+        function get(ele){
+            var a= ele.innerHTML;
+            var b=document.getElementById("screen");
+            b.innerHTML+=a;
+            
+
+            
+        }
+        // equation=screen.innerHTML;
+        
+         
+        
+        
+        function calculate(){
+            var x=document.getElementById("screen").innerHTML;
+            // console.log(x);
+
+            
+            // var result=eval(equation);
+            var b=document.getElementById("screen");
+            b.innerHTML=eval(x);
+
+        }
+        function del(){
+            var x=document.getElementById("screen").innerHTML;
+            
+            var b=document.getElementById("screen");
+            b.innerHTML=x.substr(0,x.length -1);
+
+
+        }
+        function clr(){
+            var x=document.getElementById("screen").innerHTML;
+            
+            var b=document.getElementById("screen");
+            b.innerHTML="";
+            
+
+        }
+
+    </script>
+
+    
+</body>
+</html>
